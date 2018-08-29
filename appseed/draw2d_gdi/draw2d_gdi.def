@@ -1,0 +1,5 @@
+LIBRARY "draw2d_gdi"
+
+EXPORTS
+ca2_factory_exchange
+

@@ -1,0 +1,17 @@
+{
+  "manifest_version" : 2,
+  "name": "ca2 plugin for Google Chrome",
+  "version": "%BUILD%",
+  "description": "ca2 plugin for Google Chrome",
+  "browser_action": {
+    "default_icon": "%ICONURL%"
+  },
+  "plugins": [
+    { "path": "base.dll", "public": true },
+    { "path": "npca2.dll", "public": true },
+    { "path": "app.install.exe", "public": true },
+	{ "path": "msvcp120d.dll", "public": true },
+	{ "path": "msvcr120d.dll", "public": true },
+	{ "path": "draw2d_gdiplus.dll", "public": true }
+  ]  
+}

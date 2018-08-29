@@ -1,0 +1,39 @@
+; ca2 ActiveX control for Internet Explorer
+
+[version]
+   signature="$CHICAGO$"
+   AdvancedINF=2.0
+
+[Add.Code]
+   iexca2.dll=iexca2.dll
+   app.install.exe=app.install.exe
+   draw2d_gdiplus.dll=draw2d_gdiplus.dll
+   base.dll=base.dll
+   msvcp120d.dll=msvcp120d.dll
+   msvcr120d.dll=msvcr120d.dll
+
+[msvcr120d.dll]
+   file-win32-x86=thiscab
+   FileVersion=12,0,21005,1
+
+[msvcp120d.dll]
+   file-win32-x86=thiscab
+   FileVersion=12,0,21005,1
+
+[base.dll]
+   file-win32-x86=thiscab
+   FileVersion=%VERSION%
+
+[draw2d_gdiplus.dll]
+   file-win32-x86=thiscab
+   FileVersion=%VERSION%
+
+[app.install.exe]
+   file-win32-x86=thiscab
+   FileVersion=%VERSION%
+
+[iexca2.dll]
+   file-win32-x86=thiscab
+   FileVersion=%VERSION%
+   clsid={CA211984-1984-1977-A861-F8AA2A7AEE4B}
+   RegisterServer=Yes
