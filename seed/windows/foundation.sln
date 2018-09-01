@@ -59,6 +59,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app_core_hash_sha1", "..\..\..\app-core\appseed\hash_sha1\hash_sha1.vcxproj", "{FD0C665F-90AB-4E23-813F-996896A46ED4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "design_textformat", "..\..\..\design\appseed\textformat\textformat.vcxproj", "{32BD35EA-BABA-412D-A9B5-3E75AD31E3CA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{19841115-1984-0411-1977-021977151984} = {19841115-1984-0411-1977-021977151984}
+		{11AFE887-61B7-4217-913C-36736B359F39} = {11AFE887-61B7-4217-913C-36736B359F39}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app_core_veriedit", "..\..\..\app-core\appseed\veriedit\veriedit.vcxproj", "{A3BC8F29-5353-4E22-8362-C531B2727FE3}"
 EndProject
@@ -79,6 +83,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tesseract", "..\..\..\app-core\appseed\tesseract\tesseract.vcxproj", "{437699AD-7464-4E5F-ACF3-7167487A9E3D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wndfrm_core", "..\..\..\app\appseed\wndfrm_core\wndfrm_core.vcxproj", "{E2D7833B-9B59-4826-BBDF-C270A2115E86}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app_simple_simple_drawing", "..\..\..\app-simple\appseed\simple_drawing\simple_drawing.vcxproj", "{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app_simple_simple_form", "..\..\..\app-simple\appseed\simple_form\simple_form.vcxproj", "{9A40D3D5-9296-45D8-9842-DE7F6EB46842}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -500,6 +508,30 @@ Global
 		{E2D7833B-9B59-4826-BBDF-C270A2115E86}.stage|Win32.Build.0 = stage|Win32
 		{E2D7833B-9B59-4826-BBDF-C270A2115E86}.stage|x64.ActiveCfg = stage|x64
 		{E2D7833B-9B59-4826-BBDF-C270A2115E86}.stage|x64.Build.0 = stage|x64
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.basis|Win32.ActiveCfg = basis|Win32
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.basis|Win32.Build.0 = basis|Win32
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.basis|x64.ActiveCfg = basis|x64
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.basis|x64.Build.0 = basis|x64
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.cover|Win32.ActiveCfg = cover|Win32
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.cover|Win32.Build.0 = cover|Win32
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.cover|x64.ActiveCfg = cover|x64
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.cover|x64.Build.0 = cover|x64
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.stage|Win32.ActiveCfg = stage|Win32
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.stage|Win32.Build.0 = stage|Win32
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.stage|x64.ActiveCfg = stage|x64
+		{188CF8F3-FC6C-4DC6-9902-4E41FA7A7127}.stage|x64.Build.0 = stage|x64
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.basis|Win32.ActiveCfg = basis|Win32
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.basis|Win32.Build.0 = basis|Win32
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.basis|x64.ActiveCfg = basis|x64
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.basis|x64.Build.0 = basis|x64
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.cover|Win32.ActiveCfg = cover|Win32
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.cover|Win32.Build.0 = cover|Win32
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.cover|x64.ActiveCfg = cover|x64
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.cover|x64.Build.0 = cover|x64
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.stage|Win32.ActiveCfg = stage|Win32
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.stage|Win32.Build.0 = stage|Win32
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.stage|x64.ActiveCfg = stage|x64
+		{9A40D3D5-9296-45D8-9842-DE7F6EB46842}.stage|x64.Build.0 = stage|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
