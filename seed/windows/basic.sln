@@ -44,7 +44,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app_cidadedecuritiba_alphac
 		{11AFE887-61B7-4217-913C-36736B359F39} = {11AFE887-61B7-4217-913C-36736B359F39}
 		{4467CF99-AD0F-403B-8E30-3CBA23756713} = {4467CF99-AD0F-403B-8E30-3CBA23756713}
 		{9A5FBFB1-76E6-4F7E-933A-328C1EEC95AF} = {9A5FBFB1-76E6-4F7E-933A-328C1EEC95AF}
-		{5C028FB6-5812-4CFE-B5A6-5B714BEAAD2D} = {5C028FB6-5812-4CFE-B5A6-5B714BEAAD2D}
 		{441F5CF8-7CE3-4F6F-A2E4-35351F0DE150} = {441F5CF8-7CE3-4F6F-A2E4-35351F0DE150}
 		{C7AFCEFA-3079-4B23-8F97-4543BB980265} = {C7AFCEFA-3079-4B23-8F97-4543BB980265}
 	EndProjectSection
@@ -169,9 +168,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wndfrm_core", "..\..\..\app\appseed\wndfrm_core\wndfrm_core.vcxproj", "{E2D7833B-9B59-4826-BBDF-C270A2115E86}"
 EndProject
 Global
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		basis|Win32 = basis|Win32
 		basis|x64 = basis|x64
@@ -867,6 +863,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B0DDBB4-15A7-4406-9A77-701A91DF487E}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true

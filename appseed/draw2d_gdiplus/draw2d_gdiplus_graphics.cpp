@@ -521,7 +521,7 @@ namespace draw2d_gdiplus
 
       set_text_rendering(::draw2d::text_rendering_anti_alias);
 
-      set_smooth_mode(::draw2d::smooth_mode_high);
+      set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
       return true;
 
@@ -608,7 +608,7 @@ namespace draw2d_gdiplus
 
       set_text_rendering(::draw2d::text_rendering_anti_alias);
 
-      set_smooth_mode(::draw2d::smooth_mode_high);
+      set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
       m_spbitmap = pBitmap;
 
@@ -669,7 +669,7 @@ namespace draw2d_gdiplus
 
    //      set_text_rendering(::draw2d::text_rendering_anti_alias);
 
-   //      set_smooth_mode(::draw2d::smooth_mode_high);
+   //      set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
    //      return hbitmap;
 
@@ -1211,8 +1211,6 @@ namespace draw2d_gdiplus
 
       }
 
-      set_smooth_mode(::draw2d::smooth_mode_high);
-
       return (m_pgraphics->DrawEllipse(ppen, x1, y1, x2 - x1, y2 - y1)) == Gdiplus::Status::Ok;
 
    }
@@ -1236,8 +1234,6 @@ namespace draw2d_gdiplus
          return false;
 
       }
-
-      set_smooth_mode(::draw2d::smooth_mode_high);
 
       return (m_pgraphics->DrawEllipse(ppen,rectParam.left,rectParam.top,rectParam.right - rectParam.left,rectParam.bottom - rectParam.top)) == Gdiplus::Status::Ok;
 
@@ -1264,8 +1260,6 @@ namespace draw2d_gdiplus
 
       }
 
-      set_smooth_mode(::draw2d::smooth_mode_high);
-
       return (m_pgraphics->DrawEllipse(ppen,(Gdiplus::REAL)x1,(Gdiplus::REAL)y1,(Gdiplus::REAL)(x2 - x1),(Gdiplus::REAL)(y2 - y1))) == Gdiplus::Status::Ok;
 
    }
@@ -1289,8 +1283,6 @@ namespace draw2d_gdiplus
          return false;
 
       }
-
-      set_smooth_mode(::draw2d::smooth_mode_high);
 
       return (m_pgraphics->DrawEllipse(ppen,(Gdiplus::REAL)rectParam.left,(Gdiplus::REAL)rectParam.top,
                                        (Gdiplus::REAL)(rectParam.right - rectParam.left),
@@ -1318,8 +1310,6 @@ namespace draw2d_gdiplus
 
       }
 
-      set_smooth_mode(::draw2d::smooth_mode_high);
-
       return (m_pgraphics->FillEllipse(pbrush, x1, y1, x2 - x1, y2 - y1)) == Gdiplus::Status::Ok;
 
    }
@@ -1343,8 +1333,6 @@ namespace draw2d_gdiplus
          return false;
 
       }
-
-      set_smooth_mode(::draw2d::smooth_mode_high);
 
       return (m_pgraphics->FillEllipse(pbrush, rectParam.left, rectParam.top, rectParam.right - rectParam.left, rectParam.bottom - rectParam.top)) == Gdiplus::Status::Ok;
 
@@ -1370,8 +1358,6 @@ namespace draw2d_gdiplus
 
       }
 
-      set_smooth_mode(::draw2d::smooth_mode_high);
-
       return (m_pgraphics->FillEllipse(pbrush,(Gdiplus::REAL)x1,(Gdiplus::REAL)y1,(Gdiplus::REAL)(x2 - x1),(Gdiplus::REAL)(y2 - y1))) == Gdiplus::Status::Ok;
 
    }
@@ -1395,8 +1381,6 @@ namespace draw2d_gdiplus
          return false;
 
       }
-
-      set_smooth_mode(::draw2d::smooth_mode_high);
 
       return (m_pgraphics->FillEllipse(pbrush,(Gdiplus::REAL)rectParam.left,(Gdiplus::REAL)rectParam.top,
                                        (Gdiplus::REAL)(rectParam.right - rectParam.left),
@@ -1438,9 +1422,6 @@ namespace draw2d_gdiplus
          }
 
          m_pgraphics->SetInterpolationMode(Gdiplus::InterpolationModeHighQualityBicubic);
-
-         set_smooth_mode(::draw2d::smooth_mode_high);
-
 
          bOk1 = m_pgraphics->FillPolygon(gdiplus_brush(), ppoints, (INT) nCount, gdiplus_get_fill_mode()) == Gdiplus::Status::Ok;
 
@@ -1521,8 +1502,6 @@ namespace draw2d_gdiplus
          }
 
          m_pgraphics->SetInterpolationMode(Gdiplus::InterpolationModeHighQualityBicubic);
-
-         set_smooth_mode(::draw2d::smooth_mode_high);
 
          bOk1 = m_pgraphics->DrawPolygon(gdiplus_pen(), ppoints, (INT) nCount) == Gdiplus::Status::Ok;
 
@@ -2455,7 +2434,7 @@ gdi_fallback:
 
       set_text_rendering(::draw2d::text_rendering_anti_alias);
 
-      set_smooth_mode(::draw2d::smooth_mode_high);
+      set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
       return 1;
 
@@ -3496,7 +3475,7 @@ gdi_fallback:
 
          set_text_rendering(::draw2d::text_rendering_anti_alias);
 
-         set_smooth_mode(::draw2d::smooth_mode_high);
+         set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
          m_hdc = (HDC) hdc;
 
@@ -5676,16 +5655,22 @@ gdi_fallback:
             m_pgraphics->SetSmoothingMode(Gdiplus::SmoothingModeNone);
 
          }
-         else if(m_esmoothmode == ::draw2d::smooth_mode_antialias)
-         {
-
-            m_pgraphics->SetSmoothingMode(Gdiplus::SmoothingModeHighSpeed);
-
-         }
          else if(m_esmoothmode == ::draw2d::smooth_mode_high)
          {
 
             m_pgraphics->SetSmoothingMode(Gdiplus::SmoothingModeHighQuality);
+
+         }
+         else if (m_esmoothmode == ::draw2d::smooth_mode_anti_alias_8x4)
+         {
+
+            m_pgraphics->SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias8x4);
+
+         }
+         else if (m_esmoothmode == ::draw2d::smooth_mode_anti_alias_8x8)
+         {
+
+            m_pgraphics->SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias8x8);
 
          }
 
