@@ -9,7 +9,7 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|Win32'">
-    <LocalDebuggerCommandArguments>"$(OutDir)app.exe" "app_core_desk" "$(OutDir)app_core_desk2.exe"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>"$(OutDir)app.exe" "app_core_hellomultiverse" "$(OutDir)app_core_hellomultiverse2.exe"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x64'">
@@ -21,7 +21,7 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'">
-    <LocalDebuggerCommandArguments>"$(OutDir)app.exe" "app_core_desk" "$(OutDir)app_core_desk2.exe"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>"$(OutDir)app.exe" "app_core_hellomultiverse" "$(OutDir)app_core_hellomultiverse2.exe"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>
