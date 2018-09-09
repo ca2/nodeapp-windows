@@ -480,7 +480,7 @@ Opened:
 
          }
 
-         m_pprebuffer->read_buffer(lpwavehdr->lpData, m_pprebuffer->get_buffer_size(), lpwavehdr->dwUser);
+         //m_pprebuffer->read_buffer(lpwavehdr->lpData, m_pprebuffer->get_buffer_size(), lpwavehdr->dwUser);
 
          ::multimedia::e_result mmr = mmsystem::translate(waveOutWrite(m_hwaveout, lpwavehdr, sizeof(WAVEHDR)));
 
