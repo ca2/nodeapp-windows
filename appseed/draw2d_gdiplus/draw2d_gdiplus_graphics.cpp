@@ -1570,23 +1570,7 @@ namespace draw2d_gdiplus
 
       copy(rect, lpcrect);
 
-      auto emodeOld = m_pgraphics->GetSmoothingMode();
-
-      if (emodeOld != Gdiplus::SmoothingModeNone)
-      {
-
-         m_pgraphics->SetSmoothingMode(Gdiplus::SmoothingModeNone);
-
-      }
-
       bool bOk = m_pgraphics->FillRectangle((Gdiplus::Brush *) pbrush->get_os_data(), rect) == Gdiplus::Status::Ok;
-
-      if (emodeOld != Gdiplus::SmoothingModeNone)
-      {
-
-         m_pgraphics->SetSmoothingMode(emodeOld);
-
-      }
 
       return bOk;
 
