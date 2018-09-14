@@ -199,6 +199,9 @@ void appfy::on_request(::create * pcreate)
 {
 
    string strSrc;
+
+   string strApp;
+
    {
 
       //new string();
@@ -243,7 +246,7 @@ void appfy::on_request(::create * pcreate)
 
       strSrc = solve_relative_compressions(__argv[1]);
 
-      string strApp = __argv[2];
+      strApp = __argv[2];
 
       string strDst = solve_relative_compressions(__argv[3]);
 
@@ -357,6 +360,13 @@ void appfy::on_request(::create * pcreate)
 
       dprint("a bit of parsing!!");
 
+      if (!file_exists_dup(strSrc))
+      {
+
+         ::MessageBox(NULL, "Couldn't update resources for \"" + strApp + "\".\n\nDoes the file \"" + strSrc + "\" exists at the moment of this application call?", "app._.exe", MB_ICONEXCLAMATION);
+
+      }
+
       Application.file().copy(strDst, strSrc, false);
 
       dprint("main copy should be done!!");
@@ -412,7 +422,9 @@ void appfy::on_request(::create * pcreate)
 
          m_error.set(-3);
 
-         return;
+         ::MessageBox(NULL, "Couldn't update resources for \"" + strApp + "\".\n\nDoes the file \"" + strSrc + "\" exists at the moment of this application call and is it valid so far?", "app._.exe", MB_ICONEXCLAMATION);
+
+         goto end;
 
       }
 
@@ -489,6 +501,8 @@ void appfy::on_request(::create * pcreate)
       printf("%s", ("Program \"" + strDst + "\" successfully generated!!").c_str());
 
    }
+
+end:;
 
    post_quit();
 
