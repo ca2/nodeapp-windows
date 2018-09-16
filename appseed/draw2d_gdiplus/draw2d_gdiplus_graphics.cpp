@@ -519,7 +519,7 @@ namespace draw2d_gdiplus
 
       m_pgraphics->SetPageUnit(Gdiplus::UnitPixel);
 
-      set_text_rendering(::draw2d::text_rendering_anti_alias);
+      set_text_rendering_hint(::draw2d::text_rendering_anti_alias);
 
       set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
@@ -606,7 +606,7 @@ namespace draw2d_gdiplus
 
       m_pgraphics->SetPageUnit(Gdiplus::UnitPixel);
 
-      set_text_rendering(::draw2d::text_rendering_anti_alias);
+      set_text_rendering_hint(::draw2d::text_rendering_anti_alias);
 
       set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
@@ -667,7 +667,7 @@ namespace draw2d_gdiplus
 
    //      m_pgraphics->SetPageUnit(Gdiplus::UnitPixel);
 
-   //      set_text_rendering(::draw2d::text_rendering_anti_alias);
+   //      set_text_rendering_hint(::draw2d::text_rendering_anti_alias);
 
    //      set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
@@ -1725,9 +1725,13 @@ namespace draw2d_gdiplus
          else
          {
 
+            int xSrcViewport = pgraphicsSrc->GetViewportOrg().x;
+
+            int ySrcViewport = pgraphicsSrc->GetViewportOrg().y;
+
             ret = m_pgraphics->DrawImage(
                   pbitmap,
-                  x, y, xSrc + pgraphicsSrc->GetViewportOrg().x, ySrc + pgraphicsSrc->GetViewportOrg().y, nWidth, nHeight, Gdiplus::UnitPixel);
+                  x, y, xSrc + xSrcViewport, ySrc + ySrcViewport, nWidth, nHeight, Gdiplus::UnitPixel);
 
          }
          if(ret != Gdiplus::Status::Ok)
@@ -2416,7 +2420,7 @@ gdi_fallback:
 
       m_pgraphics->SetPageUnit(Gdiplus::UnitPixel);
 
-      set_text_rendering(::draw2d::text_rendering_anti_alias);
+      set_text_rendering_hint(::draw2d::text_rendering_anti_alias);
 
       set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
@@ -3457,7 +3461,7 @@ gdi_fallback:
 
          m_pgraphics->SetPageUnit(Gdiplus::UnitPixel);
 
-         set_text_rendering(::draw2d::text_rendering_anti_alias);
+         set_text_rendering_hint(::draw2d::text_rendering_anti_alias);
 
          set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
@@ -4500,7 +4504,7 @@ gdi_fallback:
       if (m_spfont.is_set() && m_etextrendering != m_spfont->m_etextrendering)
       {
 
-         set_text_rendering(m_spfont->m_etextrendering);
+         set_text_rendering_hint(m_spfont->m_etextrendering);
 
       }
 
@@ -5409,7 +5413,7 @@ gdi_fallback:
       //if (m_etextrendering != m_spfont->m_etextrendering)
       {
 
-         set_text_rendering(m_spfont->m_etextrendering);
+         set_text_rendering_hint(m_spfont->m_etextrendering);
 
       }
 
@@ -5622,88 +5626,115 @@ gdi_fallback:
 
    }
 
-   void graphics::set_smooth_mode(::draw2d::e_smooth_mode esmoothmode)
-   {
 
-      ::draw2d::graphics::set_smooth_mode(esmoothmode);
+   bool graphics::set_smooth_mode(::draw2d::e_smooth_mode esmoothmode)
+   {
 
       try
       {
 
-         if(m_pgraphics == NULL)
-            return;
+         if (m_pgraphics == NULL)
+         {
 
-         if(m_esmoothmode == ::draw2d::smooth_mode_none)
+            return false;
+
+         }
+
+         if(esmoothmode == ::draw2d::smooth_mode_none)
          {
 
             m_pgraphics->SetSmoothingMode(Gdiplus::SmoothingModeNone);
 
          }
-         else if(m_esmoothmode == ::draw2d::smooth_mode_high)
+         else if(esmoothmode == ::draw2d::smooth_mode_high)
          {
 
             m_pgraphics->SetSmoothingMode(Gdiplus::SmoothingModeHighQuality);
 
          }
-         else if (m_esmoothmode == ::draw2d::smooth_mode_anti_alias_8x4)
+         else if (esmoothmode == ::draw2d::smooth_mode_anti_alias_8x4)
          {
 
             m_pgraphics->SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias8x4);
 
          }
-         else if (m_esmoothmode == ::draw2d::smooth_mode_anti_alias_8x8)
+         else if (esmoothmode == ::draw2d::smooth_mode_anti_alias_8x8)
          {
 
             m_pgraphics->SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias8x8);
 
          }
 
+         ::draw2d::graphics::set_smooth_mode(esmoothmode);
+
+         return true;
+
       }
       catch(...)
       {
-         return;
+
       }
+
+      return false;
 
    }
 
 
-   void graphics::set_alpha_mode(::draw2d::e_alpha_mode ealphamode)
+   bool graphics::set_alpha_mode(::draw2d::e_alpha_mode ealphamode)
    {
 
       try
       {
 
-         if(m_pgraphics == NULL)
-            return;
+         if (m_pgraphics == NULL)
+         {
+
+            return false;
+
+         }
+
+         if(ealphamode == ::draw2d::alpha_mode_blend)
+         {
+
+            m_pgraphics->SetCompositingMode(Gdiplus::CompositingModeSourceOver);
+
+         }
+         else if(ealphamode == ::draw2d::alpha_mode_set)
+         {
+
+            m_pgraphics->SetCompositingMode(Gdiplus::CompositingModeSourceCopy);
+
+         }
 
          ::draw2d::graphics::set_alpha_mode(ealphamode);
-         if(m_ealphamode == ::draw2d::alpha_mode_blend)
-         {
-            m_pgraphics->SetCompositingMode(Gdiplus::CompositingModeSourceOver);
-         }
-         else if(m_ealphamode == ::draw2d::alpha_mode_set)
-         {
-            m_pgraphics->SetCompositingMode(Gdiplus::CompositingModeSourceCopy);
-         }
+
+         return true;
 
       }
       catch(...)
       {
-         return;
+
       }
+
+      return false;
 
    }
 
 
-   void graphics::set_text_rendering(::draw2d::e_text_rendering etextrendering)
+   bool graphics::set_text_rendering_hint(::draw2d::e_text_rendering etextrenderinghint)
    {
 
-      //if (etextrendering != m_etextrendering)
+      try
       {
 
-         m_etextrendering = etextrendering;
+         if (m_pgraphics == NULL)
+         {
 
-         switch (m_etextrendering)
+            return false;
+
+         }
+
+         switch (etextrenderinghint)
          {
          case ::draw2d::text_rendering_anti_alias:
             m_pgraphics->SetTextRenderingHint(Gdiplus::TextRenderingHintAntiAlias);
@@ -5725,8 +5756,17 @@ gdi_fallback:
             break;
          }
 
+         ::draw2d::graphics::set_text_rendering_hint(etextrenderinghint);
+
+         return true;
+
+      }
+      catch (...)
+      {
+
       }
 
+      return false;
 
    }
 

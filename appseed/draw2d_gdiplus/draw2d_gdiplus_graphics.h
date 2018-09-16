@@ -478,11 +478,11 @@ namespace draw2d_gdiplus
 
 //      HGDIOBJ SelectObject(HGDIOBJ) override;      // do not use for regions
 
-      virtual void set_alpha_mode(::draw2d::e_alpha_mode ealphamode) override;
+      virtual bool set_alpha_mode(::draw2d::e_alpha_mode ealphamode) override;
 
-      virtual void set_smooth_mode(::draw2d::e_smooth_mode esmoothmode) override;
+      virtual bool set_smooth_mode(::draw2d::e_smooth_mode esmoothmode) override;
 
-      virtual void set_text_rendering(::draw2d::e_text_rendering etextrendering) override;
+      virtual bool set_text_rendering_hint(::draw2d::e_text_rendering etextrendering) override;
 
       virtual void * get_os_data() const override;
       virtual void * get_os_data_ex(int i) const override;

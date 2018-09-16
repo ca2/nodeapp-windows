@@ -132,7 +132,7 @@ namespace multimedia
                      if (m_pprebuffer->m_bPlayPreBuffer)
                      {
 
-                        wave_out_buffer_ready(msg.wParam);
+                        wave_out_free(msg.wParam);
 
                      }
                      else
@@ -769,6 +769,7 @@ Opened:
       void wave_out::wave_out_free(int iBuffer)
       {
 
+         ::multimedia::audio::wave_out::wave_out_free(iBuffer);
 
       }
 
