@@ -147,18 +147,20 @@ namespace draw2d_gdiplus
    }
 
 
-   ::draw2d::font::e_cs font::calc_cs(::draw2d::graphics * pgraphics)
+   ::draw2d::font::e_char_set font::calc_char_set(::draw2d::graphics * pgraphics)
    {
 
-      Gdiplus::Font * pfont = (Gdiplus::Font *) get_os_data();
+      //Gdiplus::Font * pfont = (Gdiplus::Font *) get_os_data();
 
-      LOGFONTA lf;
+      //LOGFONTA lf;
 
-      ZERO(lf);
+      //ZERO(lf);
 
-      pfont->GetLogFontA((::Gdiplus::Graphics *) pgraphics->get_os_data(), &lf);
+      //pfont->GetLogFontA((::Gdiplus::Graphics *) pgraphics->get_os_data(), &lf);
 
-      return ::draw2d::wingdi_get_cs(lf.lfCharSet);
+      //return ::draw2d::wingdi_get_cs(lf.lfCharSet);
+
+      return ::draw2d::font::calc_char_set(pgraphics);
 
    }
 
