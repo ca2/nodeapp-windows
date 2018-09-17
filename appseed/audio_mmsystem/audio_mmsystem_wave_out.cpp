@@ -129,6 +129,8 @@ namespace multimedia
                   if (msg.message == message_free)
                   {
 
+                     m_iBufferedCount--;
+
                      if (m_pprebuffer->m_bPlayPreBuffer)
                      {
 
@@ -137,8 +139,6 @@ namespace multimedia
                      }
                      else
                      {
-
-                        m_iBufferedCount--;
 
                         output_debug_string("message_free and not playing");
 
