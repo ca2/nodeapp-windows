@@ -15,31 +15,6 @@ namespace multimedia
       public:
 
 
-         enum e_message
-         {
-            message_free = WM_APP + 200,
-         };
-
-
-         //class  CLASS_DECL_AUDIO_MMSYSTEM helper_thread :
-         //   virtual public ::thread
-         //{
-         //public:
-
-
-         //   wave_out * m_pwaveout;
-
-
-         //   helper_thread(::aura::application * papp);
-         //   virtual ~helper_thread();
-         //   void install_message_routing(::message::sender * pinterface);
-         //   DECL_GEN_SIGNAL(OnMultimediaOpen);
-         //   DECL_GEN_SIGNAL(OnMultimediaDone);
-         //   DECL_GEN_SIGNAL(OnMultimediaClose);
-
-
-         //};
-
 
          HWAVEOUT                         m_hwaveout;
          WAVEFORMATEX                     m_waveformatex;
@@ -47,7 +22,7 @@ namespace multimedia
          imedia_time                      m_imediaposition;
 //         helper_thread *                  m_phelperthread;
          manual_reset_event               m_evFree;
-         sp(thread)                       m_pthreadFree;
+         //sp(thread)                       m_pthreadFree;
          int_array                        m_iaFree;
          mutex                            m_mutexFree;
 
@@ -63,8 +38,8 @@ namespace multimedia
          virtual imedia_time wave_out_get_position_millis();
          virtual imedia_position device_wave_out_get_position();
          virtual imedia_position wave_out_get_position();
-         virtual void wave_out_buffer_ready(index iBuffer) override;
-         virtual void wave_out_buffer_ready(LPWAVEHDR lpwavehdr);
+         virtual void wave_out_filled(index iBuffer) override;
+         virtual void wave_out_filled(LPWAVEHDR lpwavehdr);
 
          virtual ::multimedia::e_result wave_out_open_ex(::thread * pthreadCallback,  uint32_t uiSamplesPerSec, uint32_t uiChannelCount, uint32_t uiBitsPerSample, ::multimedia::audio::e_purpose epurpose) override;
          virtual ::multimedia::e_result wave_out_stop() override;
@@ -75,17 +50,11 @@ namespace multimedia
          HWAVEOUT wave_out_get_safe_HWAVEOUT();
 
          virtual void wave_out_on_playback_end();
-         virtual void wave_out_free(int iBuffer);
-         virtual void wave_out_free(LPWAVEHDR lpwavehdr);
+         virtual void wave_out_free(index iBuffer) override;
 
          virtual bool init_thread() override;
          virtual void term_thread() override;
 
-         DECL_GEN_SIGNAL(OnMultimediaOpen);
-         DECL_GEN_SIGNAL(OnMultimediaDone);
-         DECL_GEN_SIGNAL(OnMultimediaClose);
-
-         virtual void wave_out_out_buffer_done(index iBuffer) override;
 
          WAVEFORMATEX * wave_format();
          LPWAVEHDR wave_hdr(index iBuffer);
@@ -93,7 +62,7 @@ namespace multimedia
 
          //virtual bool raw_pump_message() override;
 
-         virtual void wave_out_launch_buffers() override;
+         //virtual void wave_out_launch_buffers() override;
 
 
       };

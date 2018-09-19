@@ -17,7 +17,9 @@ namespace multimedia
 
             LPWAVEHDR lpwavehdr = (LPWAVEHDR) dwParam1;
 
-            ::PostThreadMessage(dwInstance, wave_out::message_free, lpwavehdr->dwUser, 0);
+            auto pwaveout = (::multimedia::audio_mmsystem::wave_out *) dwInstance;
+
+            pwaveout->m_psynththread->post_message(wave_out::message_free, lpwavehdr->dwUser);
 
          }
 
@@ -48,6 +50,7 @@ namespace multimedia
       {
 
       }
+
 
       void wave_out::install_message_routing(::message::sender * pinterface)
       {
@@ -113,60 +116,60 @@ namespace multimedia
 
          sp(::multimedia::audio::wave) audiowave = Application.audiowave();
 
-         if (m_pthreadFree.is_null())
-         {
+         //if (m_pthreadFree.is_null())
+         //{
 
-            m_pthreadFree = fork([this]()
-            {
+         //   m_pthreadFree = fork([this]()
+         //   {
 
-               ::get_thread()->set_thread_priority(::multithreading::priority_time_critical);
+         //      ::get_thread()->set_thread_priority(::multithreading::priority_time_critical);
 
-               MESSAGE msg;
+         //      MESSAGE msg;
 
-               while (::GetMessage(&msg, NULL, 0, 0))
-               {
+         //      while (::GetMessage(&msg, NULL, 0, 0))
+         //      {
 
-                  if (msg.message == message_free)
-                  {
+         //         if (msg.message == message_free)
+         //         {
 
-                     m_iBufferedCount--;
+         //            m_iBufferedCount--;
 
-                     if (m_pprebuffer->m_bPlayPreBuffer)
-                     {
+         //            if (m_pprebuffer->m_bPlayPreBuffer)
+         //            {
 
-                        wave_out_free(msg.wParam);
+         //               wave_out_free(msg.wParam);
 
-                     }
-                     else
-                     {
+         //            }
+         //            else
+         //            {
 
-                        output_debug_string("message_free and not playing");
+         //               output_debug_string("message_free and not playing");
 
-                        if (m_iBufferedCount <= 0)
-                        {
+         //               if (m_iBufferedCount <= 0)
+         //               {
 
-                           wave_out_on_playback_end();
+         //                  wave_out_on_playback_end();
 
-                        }
+         //               }
 
-                     }
+         //            }
 
-                  }
+         //         }
 
-               }
+         //      }
 
-               m_pthreadFree.release();
+         //      m_pthreadFree.release();
 
-               output_debug_string("quit");
+         //      output_debug_string("quit");
 
-            });
+         //   });
 
-         }
+         //}
 
          try
          {
 
-            mmresult = waveOutOpen(&m_hwaveout, audiowave->m_uiWaveOutDevice, wave_format(), (DWORD_PTR) &waveOutProc, (DWORD_PTR) m_pthreadFree->get_os_int(), CALLBACK_FUNCTION);
+            mmresult = waveOutOpen(&m_hwaveout, audiowave->m_uiWaveOutDevice, wave_format(), (DWORD_PTR) &waveOutProc, (DWORD_PTR) this, CALLBACK_FUNCTION);
 
             if (mmresult == MMSYSERR_NOERROR)
             {
@@ -385,88 +388,32 @@ Opened:
       }
 
 
-      void wave_out::OnMultimediaOpen(::message::message * pobj)
+
+      void wave_out::wave_out_filled(index iBuffer)
       {
 
-         UNREFERENCED_PARAMETER(pobj);
-
-      }
-
-
-      void wave_out::OnMultimediaDone(::message::message * pobj)
-      {
-
-         //synch_lock sl(m_pmutex);
-
-         try
-         {
-
-            m_imediatime = device_wave_out_get_position_millis();
-
-            m_imediaposition = device_wave_out_get_position();
-
-            SCAST_PTR(::message::base, pbase, pobj);
-
-            LPWAVEHDR lpwavehdr = (LPWAVEHDR)pbase->m_lparam.m_lparam;
-
-            if (lpwavehdr != NULL)
-            {
-
-               wave_out_out_buffer_done((int32_t)lpwavehdr->dwUser);
-
-            }
-
-         }
-         catch (...)
-         {
-
-         }
-
-      }
-
-      void wave_out::wave_out_out_buffer_done(index iBuffer)
-      {
-
-         m_iBufferedCount--;
-
-         wave_out_free(iBuffer);
-
-      }
-
-
-      void wave_out::OnMultimediaClose(::message::message * pobj)
-      {
-
-         UNREFERENCED_PARAMETER(pobj);
-
-      }
-
-
-      void wave_out::wave_out_buffer_ready(index iBuffer)
-      {
-
-         return wave_out_buffer_ready(wave_hdr(iBuffer));
+         return wave_out_filled(wave_hdr(iBuffer));
 
       }
 
 
 
-      void wave_out::wave_out_launch_buffers()
-      {
+      //void wave_out::wave_out_launch_buffers()
+      //{
 
-         m_iBufferedCount = wave_out_get_buffer()->GetBufferCount();
+      //   m_iBufferedCount = wave_out_get_buffer()->GetBufferCount();
 
-         for (int32_t dw = 0; dw < wave_out_get_buffer()->GetBufferCount(); dw++)
-         {
+      //   for (int32_t dw = 0; dw < wave_out_get_buffer()->GetBufferCount(); dw++)
+      //   {
 
-            ::PostThreadMessage(m_pthreadFree->get_os_int(), wave_out::message_free, dw, 0);
+      //      ::PostThreadMessage(m_pthreadFree->get_os_int(), wave_out::message_free, dw, 0);
 
-         }
+      //   }
 
-      }
+      //}
 
 
-      void wave_out::wave_out_buffer_ready(LPWAVEHDR lpwavehdr)
+      void wave_out::wave_out_filled(LPWAVEHDR lpwavehdr)
       {
 
          synch_lock sl(m_pmutex);
@@ -766,17 +713,10 @@ Opened:
       }
 
 
-      void wave_out::wave_out_free(int iBuffer)
+      void wave_out::wave_out_free(index iBuffer)
       {
 
          ::multimedia::audio::wave_out::wave_out_free(iBuffer);
-
-      }
-
-
-      void wave_out::wave_out_free(LPWAVEHDR lpwavehdr)
-      {
-
 
       }
 
