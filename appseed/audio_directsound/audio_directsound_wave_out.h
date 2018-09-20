@@ -107,20 +107,20 @@ namespace multimedia
       {
       public:
 
-         class run_step_thread :
-            virtual public ::thread
-         {
-         public:
+         //class run_step_thread :
+         //   virtual public ::thread
+         //{
+         //public:
 
-            wave_out * m_pout;
+         //   wave_out * m_pout;
 
-            run_step_thread(wave_out * pout);
+         //   run_step_thread(wave_out * pout);
 
-            virtual void run() override;
+         //   virtual void run() override;
 
-         };
+         //};
 
-         run_step_thread *                m_prunstepthread;
+         //run_step_thread *                m_prunstepthread;
 
          int                              m_iBuffer;
 
@@ -133,17 +133,15 @@ namespace multimedia
          array < DSBPOSITIONNOTIFY >      m_notifya;
 
 
-         wave_out(sp(::axis::application) papp);
+         wave_out(::aura::application * papp);
          virtual ~wave_out();
-
-         virtual void on_free(index i);
 
          ::multimedia::e_result wave_out_start(const imedia_position & position);
          void install_message_routing(::message::sender * pinterface);
 
          virtual imedia_time wave_out_get_position_millis();
          imedia_position wave_out_get_position();
-         virtual void wave_out_buffer_ready(index iBuffer) override;
+         virtual void wave_out_filled(index iBuffer) override;
          //virtual void wave_out_buffer_ready(LPWAVEHDR lpwavehdr);
 
          virtual ::multimedia::e_result wave_out_open(::thread * pthreadCallback, int32_t iBufferCount, int32_t iBufferSampleCount);

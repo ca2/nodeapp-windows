@@ -10,7 +10,7 @@ namespace multimedia
 
 
 
-      wave_out::wave_out(sp(::axis::application) papp) :
+      wave_out::wave_out(::aura::application * papp) :
          ::object(papp),
          ::thread(papp),
          wave_base(papp),
@@ -459,53 +459,66 @@ namespace multimedia
       }
 
 
-
-      void wave_out::wave_out_buffer_ready(index iBuffer)
-      {
-
-         on_free(iBuffer);
-
-         return;
-
-      }
-
-
-      void wave_out::on_free(index i)
+      void wave_out::wave_out_filled(index i)
       {
 
          synch_lock sl(m_pmutex);
+
          LPVOID lpvAudio1 = NULL,lpvAudio2 = NULL;
+
          DWORD dwBytesAudio1 = 0,dwBytesAudio2 = 0;
+
          DWORD dwRetSamples = 0,dwRetBytes = 0;
 
-         //DWORD dwWrite;
-
-
-         //         wave_out_out_buffer_done(i);
-
-         if(i >= 0)
+         if (i < 0 || i >= wave_out_get_buffer()->GetBufferCount())
          {
+
+            return ;
+
+         }
+
+         m_iBufferedCount++;
+
+         {
+
             HRESULT hr = m_psoundbuffer->Lock((DWORD)(i * wave_out_get_buffer_size()), (DWORD) wave_out_get_buffer_size(),&lpvAudio1,&dwBytesAudio1,&lpvAudio2,&dwBytesAudio2,0);
+
             if(FAILED(hr))
             {
+
+               m_iBufferedCount--;
+
                return;
+
             }
+
             if(NULL == lpvAudio2)
             {
+
                memcpy(lpvAudio1,wave_out_get_buffer_data(i),dwBytesAudio1);
+
             }
             else
             {
+
                memcpy(lpvAudio1,wave_out_get_buffer_data(i),dwBytesAudio1);
+
                memcpy(lpvAudio2,(byte *)wave_out_get_buffer_data(i) + dwBytesAudio1,dwBytesAudio2);
+
             }
 
-            //Unlock DirectSoundBuffer
-            m_psoundbuffer->Unlock(lpvAudio1,dwBytesAudio1,lpvAudio2,dwBytesAudio2);
+            hr = m_psoundbuffer->Unlock(lpvAudio1,dwBytesAudio1,lpvAudio2,dwBytesAudio2);
+
+            if (FAILED(hr))
+            {
+
+               m_iBufferedCount--;
+
+               return;
+
+            }
+
          }
-
-
-
 
       }
 
@@ -593,7 +606,7 @@ namespace multimedia
 
          m_mmr = directsound::translate(m_psoundbuffer->Play(0,0,DSBPLAY_LOOPING));
 
-         m_prunstepthread = new run_step_thread(this);
+         //m_prunstepthread = new run_step_thread(this);
 
 
          return result_success;
@@ -855,37 +868,34 @@ namespace multimedia
             if(iNext == iPlay)
                break;
 
-            wave_out_out_buffer_done(iNext);
+            // xxx wave_out_out_buffer_done(iNext);
 
             m_iBuffer = iNext;
 
          }
 
-
-
-
       }
 
 
-      wave_out::run_step_thread::run_step_thread(wave_out * pout):
-         ::thread(pout->get_app())
-      {
-         m_pout = pout;
-         begin();
-      }
+      //wave_out::run_step_thread::run_step_thread(wave_out * pout):
+      //   ::thread(pout->get_app())
+      //{
+      //   m_pout = pout;
+      //   begin();
+      //}
 
 
-      void wave_out::run_step_thread::run()
-      {
+      //void wave_out::run_step_thread::run()
+      //{
 
-         while(thread_get_run() && m_pout->m_estate == wave_out::state_playing)
-         {
+      //   while(thread_get_run() && m_pout->m_estate == wave_out::state_playing)
+      //   {
 
-            m_pout->wave_out_run_step();
+      //      m_pout->wave_out_run_step();
 
-         }
+      //   }
 
-      }
+      //}
 
 
    } // namespace audio_directsound
