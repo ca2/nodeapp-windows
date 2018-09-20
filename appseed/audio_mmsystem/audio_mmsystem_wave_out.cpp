@@ -199,7 +199,7 @@ Opened:
 
          wave_out_get_buffer()->PCMOutOpen(this, iBufferSize, iBufferCount,128, m_pwaveformat, m_pwaveformat);
 
-         m_pprebuffer->open(this, m_pwaveformat->nChannels, iBufferCount, iBufferSampleCount);
+         m_pprebuffer->open(m_pwaveformat->nChannels, iBufferCount, iBufferSampleCount);
 
          index i;
 
@@ -385,8 +385,6 @@ Opened:
             return ::multimedia::result_error;
 
          }
-
-         m_eventStopped.ResetEvent();
 
          m_pprebuffer->stop();
 
@@ -672,9 +670,7 @@ Opened:
 
          }
 
-         m_eventStopped.SetEvent();
-
-         m_pplayer->OnEvent(::multimedia::audio::wave_player::EventPlaybackEnd);
+         m_pplayer->post_event(::multimedia::audio::wave_player::EventPlaybackEnd);
 
       }
 
