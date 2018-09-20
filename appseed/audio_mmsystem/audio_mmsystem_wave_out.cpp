@@ -38,7 +38,6 @@ namespace multimedia
          m_estate             = state_initial;
          m_pthreadCallback    = NULL;
          m_hwaveout           = NULL;
-         m_iBufferedCount     = 0;
          m_peffect            = NULL;
 
       }
@@ -115,56 +114,6 @@ namespace multimedia
          m_pwaveformat->cbSize            = sizeof(m_waveformatex);
 
          sp(::multimedia::audio::wave) audiowave = Application.audiowave();
-
-         //if (m_pthreadFree.is_null())
-         //{
-
-         //   m_pthreadFree = fork([this]()
-         //   {
-
-         //      ::get_thread()->set_thread_priority(::multithreading::priority_time_critical);
-
-         //      MESSAGE msg;
-
-         //      while (::GetMessage(&msg, NULL, 0, 0))
-         //      {
-
-         //         if (msg.message == message_free)
-         //         {
-
-         //            m_iBufferedCount--;
-
-         //            if (m_pprebuffer->m_bPlayPreBuffer)
-         //            {
-
-         //               wave_out_free(msg.wParam);
-
-         //            }
-         //            else
-         //            {
-
-         //               output_debug_string("message_free and not playing");
-
-         //               if (m_iBufferedCount <= 0)
-         //               {
-
-         //                  wave_out_on_playback_end();
-
-         //               }
-
-         //            }
-
-         //         }
-
-         //      }
-
-         //      m_pthreadFree.release();
-
-         //      output_debug_string("quit");
-
-         //   });
-
-         //}
 
          try
          {
@@ -392,25 +341,9 @@ Opened:
       void wave_out::wave_out_filled(index iBuffer)
       {
 
-         return wave_out_filled(wave_hdr(iBuffer));
+         wave_out_filled(wave_hdr(iBuffer));
 
       }
-
-
-
-      //void wave_out::wave_out_launch_buffers()
-      //{
-
-      //   m_iBufferedCount = wave_out_get_buffer()->GetBufferCount();
-
-      //   for (int32_t dw = 0; dw < wave_out_get_buffer()->GetBufferCount(); dw++)
-      //   {
-
-      //      ::PostThreadMessage(m_pthreadFree->get_os_int(), wave_out::message_free, dw, 0);
-
-      //   }
-
-      //}
 
 
       void wave_out::wave_out_filled(LPWAVEHDR lpwavehdr)
@@ -427,18 +360,14 @@ Opened:
 
          }
 
-         //m_pprebuffer->read_buffer(lpwavehdr->lpData, m_pprebuffer->get_buffer_size(), lpwavehdr->dwUser);
+         m_iBufferedCount++;
 
          ::multimedia::e_result mmr = mmsystem::translate(waveOutWrite(m_hwaveout, lpwavehdr, sizeof(WAVEHDR)));
-
-         //VERIFY(::multimedia::result_success == mmr);
 
          if(mmr != ::multimedia::result_success)
          {
 
             m_iBufferedCount--;
-
-            throw resource_exception(get_app());
 
          }
 
@@ -450,8 +379,12 @@ Opened:
 
          synch_lock sl(m_pmutex);
 
-         if(m_estate != state_playing && m_estate != state_paused)
+         if (m_estate != state_playing && m_estate != state_paused)
+         {
+
             return ::multimedia::result_error;
+
+         }
 
          m_eventStopped.ResetEvent();
 

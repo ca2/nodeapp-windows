@@ -17,16 +17,11 @@ namespace multimedia
          ::multimedia::audio::wave_out(papp)
       {
 
-
-
-
          m_estate             = state_initial;
          m_pthreadCallback    = NULL;
          m_pdirectsound       = NULL;
          m_psoundbuffer       = NULL;
-         m_iBufferedCount     = 0;
          m_peffect            = NULL;
-//         m_dwLostSampleCount  = 0;
 
       }
 
