@@ -1,0 +1,256 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_ace", "..\..\..\app\appseed\ace\_ace.vcxproj", "{699D6807-4F43-40E9-86AB-2A8B856707A9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_desk_tb", "..\..\..\app-core\appseed\desk_tb\desk_tb.vcxproj", "{19518477-1511-2204-0204-5872E30F2300}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_draw2d_gdiplus", "..\..\appseed\draw2d_gdiplus\_draw2d_gdiplus.vcxproj", "{573C4B5E-4132-457A-BE82-05A882A062FF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "icopy", "..\..\..\app-core\appseed\consolelab\icopy.vcxproj", "{1EBB0D6E-64EA-41AB-9916-956D2C766933}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5} = {05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app._", "..\..\appseed\app._\app._.vcxproj", "{11AFE887-61B7-4217-913C-36736B359F39}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_acid", "..\..\..\app\appseed\aura\acid.vcxproj", "{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E2DA747-D784-4B3F-8961-913CBA4D215A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "icat", "..\..\..\app-core\appseed\consolelab\icat.vcxproj", "{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fastdelete", "..\..\..\app-core\appseed\consolelab\fastdelete.vcxproj", "{72DA5949-6313-40C5-BEAD-ECA1944262E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		basis|Win32 = basis|Win32
+		basis|x64 = basis|x64
+		cover|Win32 = cover|Win32
+		cover|x64 = cover|x64
+		stage|Win32 = stage|Win32
+		stage|x64 = stage|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.basis|Win32.ActiveCfg = basis|Win32
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.basis|Win32.Build.0 = basis|Win32
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.basis|x64.ActiveCfg = basis|x64
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.basis|x64.Build.0 = basis|x64
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.cover|Win32.ActiveCfg = cover|Win32
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.cover|Win32.Build.0 = cover|Win32
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.cover|Win32.Deploy.0 = cover|Win32
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.cover|x64.ActiveCfg = cover|x64
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.cover|x64.Build.0 = cover|x64
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.cover|x64.Deploy.0 = cover|x64
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.stage|Win32.ActiveCfg = stage|Win32
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.stage|Win32.Build.0 = stage|Win32
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.stage|x64.ActiveCfg = stage|x64
+		{699D6807-4F43-40E9-86AB-2A8B856707A9}.stage|x64.Build.0 = stage|x64
+		{19518477-1511-2204-0204-5872E30F2300}.basis|Win32.ActiveCfg = basis|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.basis|Win32.Build.0 = basis|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.basis|x64.ActiveCfg = basis|x64
+		{19518477-1511-2204-0204-5872E30F2300}.basis|x64.Build.0 = basis|x64
+		{19518477-1511-2204-0204-5872E30F2300}.cover|Win32.ActiveCfg = cover|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.cover|Win32.Build.0 = cover|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.cover|x64.ActiveCfg = cover|x64
+		{19518477-1511-2204-0204-5872E30F2300}.cover|x64.Build.0 = cover|x64
+		{19518477-1511-2204-0204-5872E30F2300}.stage|Win32.ActiveCfg = stage|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.stage|Win32.Build.0 = stage|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.stage|x64.ActiveCfg = stage|x64
+		{19518477-1511-2204-0204-5872E30F2300}.stage|x64.Build.0 = stage|x64
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.basis|Win32.ActiveCfg = basis|Win32
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.basis|Win32.Build.0 = basis|Win32
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.basis|x64.ActiveCfg = basis|x64
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.basis|x64.Build.0 = basis|x64
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.cover|Win32.ActiveCfg = cover|Win32
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.cover|Win32.Build.0 = cover|Win32
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.cover|x64.ActiveCfg = cover|x64
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.cover|x64.Build.0 = cover|x64
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.stage|Win32.ActiveCfg = stage|Win32
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.stage|Win32.Build.0 = stage|Win32
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.stage|x64.ActiveCfg = stage|x64
+		{573C4B5E-4132-457A-BE82-05A882A062FF}.stage|x64.Build.0 = stage|x64
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.basis|Win32.ActiveCfg = basis|Win32
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.basis|Win32.Build.0 = basis|Win32
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.basis|x64.ActiveCfg = basis|x64
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.basis|x64.Build.0 = basis|x64
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.cover|Win32.ActiveCfg = cover|Win32
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.cover|Win32.Build.0 = cover|Win32
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.cover|x64.ActiveCfg = cover|x64
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.cover|x64.Build.0 = cover|x64
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.stage|Win32.ActiveCfg = stage|Win32
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.stage|Win32.Build.0 = stage|Win32
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.stage|x64.ActiveCfg = stage|x64
+		{1EBB0D6E-64EA-41AB-9916-956D2C766933}.stage|x64.Build.0 = stage|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.basis|Win32.ActiveCfg = basis|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.basis|Win32.Build.0 = basis|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.basis|x64.ActiveCfg = basis|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.basis|x64.Build.0 = basis|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.cover|Win32.ActiveCfg = cover|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.cover|Win32.Build.0 = cover|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.cover|x64.ActiveCfg = cover|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.cover|x64.Build.0 = cover|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.stage|Win32.ActiveCfg = stage|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.stage|Win32.Build.0 = stage|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.stage|x64.ActiveCfg = stage|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.stage|x64.Build.0 = stage|x64
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.basis|Win32.ActiveCfg = basis|Win32
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.basis|Win32.Build.0 = basis|Win32
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.basis|Win32.Deploy.0 = basis|Win32
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.basis|x64.ActiveCfg = basis|x64
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.basis|x64.Build.0 = basis|x64
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.basis|x64.Deploy.0 = basis|x64
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.cover|Win32.ActiveCfg = cover|Win32
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.cover|Win32.Build.0 = cover|Win32
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.cover|Win32.Deploy.0 = cover|Win32
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.cover|x64.ActiveCfg = cover|x64
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.cover|x64.Build.0 = cover|x64
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.cover|x64.Deploy.0 = cover|x64
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.stage|Win32.ActiveCfg = stage|Win32
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.stage|Win32.Build.0 = stage|Win32
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.stage|Win32.Deploy.0 = stage|Win32
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.stage|x64.ActiveCfg = stage|x64
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.stage|x64.Build.0 = stage|x64
+		{05E5B8E7-9E3B-44DD-9EDE-E0A74D52C1C5}.stage|x64.Deploy.0 = stage|x64
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.basis|Win32.ActiveCfg = basis|Win32
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.basis|Win32.Build.0 = basis|Win32
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.basis|x64.ActiveCfg = basis|x64
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.basis|x64.Build.0 = basis|x64
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.cover|Win32.ActiveCfg = cover|Win32
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.cover|Win32.Build.0 = cover|Win32
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.cover|x64.ActiveCfg = cover|x64
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.cover|x64.Build.0 = cover|x64
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.stage|Win32.ActiveCfg = stage|Win32
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.stage|Win32.Build.0 = stage|Win32
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.stage|x64.ActiveCfg = stage|x64
+		{5E7B9C5F-05C4-4A1C-9043-B51EE73172B1}.stage|x64.Build.0 = stage|x64
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.basis|Win32.ActiveCfg = basis|Win32
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.basis|Win32.Build.0 = basis|Win32
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.basis|x64.ActiveCfg = basis|x64
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.basis|x64.Build.0 = basis|x64
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.cover|Win32.ActiveCfg = cover|Win32
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.cover|Win32.Build.0 = cover|Win32
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.cover|x64.ActiveCfg = cover|x64
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.cover|x64.Build.0 = cover|x64
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.stage|Win32.ActiveCfg = stage|Win32
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.stage|Win32.Build.0 = stage|Win32
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.stage|x64.ActiveCfg = stage|x64
+		{72DA5949-6313-40C5-BEAD-ECA1944262E6}.stage|x64.Build.0 = stage|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68D0CE57-7B21-4289-B0DC-382B607631F2}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal
