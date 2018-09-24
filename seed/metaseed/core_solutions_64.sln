@@ -354,6 +354,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app_core_verilux", "..\..\.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rdpsnd-client-audio_decode", "..\..\..\app-core\appseed\rdpsnd-client-audio_decode\rdpsnd-client-audio_decode.vcxproj", "{D47829CA-5441-4A01-9C34-19C3598410DF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app._", "..\..\appseed\app._\app._.vcxproj", "{11AFE887-61B7-4217-913C-36736B359F39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		basis|Win32 = basis|Win32
@@ -1316,6 +1318,18 @@ Global
 		{D47829CA-5441-4A01-9C34-19C3598410DF}.stage|Win32.Build.0 = stage|Win32
 		{D47829CA-5441-4A01-9C34-19C3598410DF}.stage|x64.ActiveCfg = stage|x64
 		{D47829CA-5441-4A01-9C34-19C3598410DF}.stage|x64.Build.0 = stage|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.basis|Win32.ActiveCfg = basis|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.basis|Win32.Build.0 = basis|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.basis|x64.ActiveCfg = basis|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.basis|x64.Build.0 = basis|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.cover|Win32.ActiveCfg = cover|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.cover|Win32.Build.0 = cover|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.cover|x64.ActiveCfg = cover|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.cover|x64.Build.0 = cover|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.stage|Win32.ActiveCfg = stage|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.stage|Win32.Build.0 = stage|Win32
+		{11AFE887-61B7-4217-913C-36736B359F39}.stage|x64.ActiveCfg = stage|x64
+		{11AFE887-61B7-4217-913C-36736B359F39}.stage|x64.Build.0 = stage|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

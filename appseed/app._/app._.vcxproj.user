@@ -3,25 +3,31 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|Win32'">
     <LocalDebuggerCommandArguments>"$(OutDir)app.exe" "app_veriwell_drum_factory" "$(OutDir)app_veriwell_drum_factory2.exe"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>C:\bergedge\lemon\windows\bin\app._.exe</LocalDebuggerCommand>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cover|Win32'">
     <LocalDebuggerCommandArguments>"$(OutDir)app.exe" "app_core_desk" "$(OutDir)app_core_desk2.exe"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>C:\bergedge\lemon\windows\bin\app._.exe</LocalDebuggerCommand>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|Win32'">
     <LocalDebuggerCommandArguments>"$(OutDir)app.exe" "app_core_hellomultiverse" "$(OutDir)app_core_hellomultiverse2.exe"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>C:\bergedge\lemon\windows\bin\app._.exe</LocalDebuggerCommand>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x64'">
-    <LocalDebuggerCommandArguments>"$(OutDir)app.exe" "app_core_verifile" "$(OutDir)app_core_verifile2.exe"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>"C:\xcore\time\x64\basis\app.exe" "app_core_desk" "C:\xcore\time\x64\basis\app_core_desk2.exe"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>C:\bergedge\lemon\windows\bin\app._.exe</LocalDebuggerCommand>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='cover|x64'">
     <LocalDebuggerCommandArguments>"$(OutDir)app.exe" "app_core_desk" "$(OutDir)app_core_desk2.exe"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>C:\bergedge\lemon\windows\bin\app._.exe</LocalDebuggerCommand>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'">
     <LocalDebuggerCommandArguments>"$(OutDir)app.exe" "app_core_hellomultiverse" "$(OutDir)app_core_hellomultiverse2.exe"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>C:\bergedge\lemon\windows\bin\app._.exe</LocalDebuggerCommand>
   </PropertyGroup>
 </Project>
