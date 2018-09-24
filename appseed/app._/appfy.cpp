@@ -1,4 +1,6 @@
-﻿#include "aura/aura/app/acid.inl"
+﻿#define PATH_INSTALL_FOLDER_EXE_ARG 1
+
+#include "aura/aura/app/acid.inl"
 #include <stdio.h>
 #include <psapi.h>
 #include <tlhelp32.h>
