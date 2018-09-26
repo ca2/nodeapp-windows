@@ -225,7 +225,7 @@
     <CustomBuildStep>
       <Outputs>$(OutDir)$(TargetName).exe</Outputs>
       <Inputs>$(OutDir)app.exe</Inputs>
-      <Command>"$(OutDir)app._.exe" "$(OutDir)app.exe" "$(ProjectName)" "$(OutDir)$(TargetName).exe"</Command>
+      <Command>app._.exe "$(OutDir)app.exe" "$(ProjectName)" "$(OutDir)$(TargetName).exe"</Command>
     </CustomBuildStep>
     <Xdcmake>
       <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
@@ -312,6 +312,7 @@
     <CustomBuildStep>
       <Outputs>$(OutDir)$(TargetName).exe</Outputs>
       <Inputs>$(OutDir)app.exe</Inputs>
+      <Command>app._.exe "$(OutDir)app.exe" "$(ProjectName)" "$(OutDir)$(TargetName).exe"</Command>
     </CustomBuildStep>
     <Xdcmake>
       <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
@@ -403,7 +404,7 @@
     <CustomBuildStep>
       <Outputs>$(OutDir)$(TargetName).exe</Outputs>
       <Inputs>$(OutDir)app.exe</Inputs>
-      <Command>"$(OutDir)app._.exe" "$(OutDir)app.exe" "$(ProjectName)" "$(OutDir)$(TargetName).exe"</Command>
+      <Command>app._.exe "$(OutDir)app.exe" "$(ProjectName)" "$(OutDir)$(TargetName).exe"</Command>
     </CustomBuildStep>
     <Xdcmake>
       <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
@@ -489,7 +490,7 @@
     <CustomBuildStep>
       <Outputs>$(OutDir)$(TargetName).exe</Outputs>
       <Inputs>$(OutDir)app.exe</Inputs>
-      <Command>"$(OutDir)app._.exe" "$(OutDir)app.exe" "$(ProjectName)" "$(OutDir)$(TargetName).exe"</Command>
+      <Command>app._.exe "$(OutDir)app.exe" "$(ProjectName)" "$(OutDir)$(TargetName).exe"</Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='cover|x64'">
@@ -572,7 +573,7 @@
     <CustomBuildStep>
       <Outputs>$(OutDir)$(TargetName).exe</Outputs>
       <Inputs>$(OutDir)app.exe</Inputs>
-      <Command>"$(OutDir)app._.exe" "$(OutDir)app.exe" "$(ProjectName)" "$(OutDir)$(TargetName).exe"</Command>
+      <Command>app._.exe "$(OutDir)app.exe" "$(ProjectName)" "$(OutDir)$(TargetName).exe"</Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'">
@@ -662,7 +663,7 @@
     <CustomBuildStep>
       <Outputs>$(OutDir)$(TargetName).exe</Outputs>
       <Inputs>$(OutDir)app.exe</Inputs>
-      <Command>"$(OutDir)app._.exe" "$(OutDir)app.exe" "$(ProjectName)" "$(OutDir)$(TargetName).exe"</Command>
+      <Command>app._.exe "$(OutDir)app.exe" "$(ProjectName)" "$(OutDir)$(TargetName).exe"</Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
