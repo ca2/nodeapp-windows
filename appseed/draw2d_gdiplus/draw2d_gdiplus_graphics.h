@@ -482,7 +482,7 @@ namespace draw2d_gdiplus
 
       virtual bool set_smooth_mode(::draw2d::e_smooth_mode esmoothmode) override;
 
-      virtual bool set_text_rendering_hint_hint(::draw2d::e_text_rendering_hint_hint etextrendering) override;
+      virtual bool set_text_rendering_hint(::draw2d::e_text_rendering_hint etextrendering) override;
 
       virtual void * get_os_data() const override;
       virtual void * get_os_data_ex(int i) const override;

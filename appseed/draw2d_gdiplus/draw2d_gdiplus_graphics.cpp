@@ -519,7 +519,7 @@ namespace draw2d_gdiplus
 
       m_pgraphics->SetPageUnit(Gdiplus::UnitPixel);
 
-      set_text_rendering_hint_hint(::draw2d::text_rendering_hint_anti_alias);
+      set_text_rendering_hint(::draw2d::text_rendering_hint_anti_alias);
 
       set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
@@ -606,7 +606,7 @@ namespace draw2d_gdiplus
 
       m_pgraphics->SetPageUnit(Gdiplus::UnitPixel);
 
-      set_text_rendering_hint_hint(::draw2d::text_rendering_hint_anti_alias);
+      set_text_rendering_hint(::draw2d::text_rendering_hint_anti_alias);
 
       set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
@@ -667,7 +667,7 @@ namespace draw2d_gdiplus
 
    //      m_pgraphics->SetPageUnit(Gdiplus::UnitPixel);
 
-   //      set_text_rendering_hint_hint(::draw2d::text_rendering_hint_anti_alias);
+   //      set_text_rendering_hint(::draw2d::text_rendering_hint_anti_alias);
 
    //      set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
@@ -2420,7 +2420,7 @@ gdi_fallback:
 
       m_pgraphics->SetPageUnit(Gdiplus::UnitPixel);
 
-      set_text_rendering_hint_hint(::draw2d::text_rendering_hint_anti_alias);
+      set_text_rendering_hint(::draw2d::text_rendering_hint_anti_alias);
 
       set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
@@ -3461,7 +3461,7 @@ gdi_fallback:
 
          m_pgraphics->SetPageUnit(Gdiplus::UnitPixel);
 
-         set_text_rendering_hint_hint(::draw2d::text_rendering_hint_anti_alias);
+         set_text_rendering_hint(::draw2d::text_rendering_hint_anti_alias);
 
          set_smooth_mode(::draw2d::smooth_mode_anti_alias_8x8);
 
@@ -4504,7 +4504,7 @@ gdi_fallback:
       if (m_spfont.is_set() && m_etextrenderinghint != m_spfont->m_etextrenderinghint)
       {
 
-         set_text_rendering_hint_hint(m_spfont->m_etextrenderinghint);
+         set_text_rendering_hint(m_spfont->m_etextrenderinghint);
 
       }
 
@@ -5413,7 +5413,7 @@ gdi_fallback:
       //if (m_etextrenderinghint != m_spfont->m_etextrenderinghint)
       {
 
-         set_text_rendering_hint_hint(m_spfont->m_etextrenderinghint);
+         set_text_rendering_hint(m_spfont->m_etextrenderinghint);
 
       }
 
@@ -5721,7 +5721,7 @@ gdi_fallback:
    }
 
 
-   bool graphics::set_text_rendering_hint_hint(::draw2d::e_text_rendering_hint_hint etextrenderinghint)
+   bool graphics::set_text_rendering_hint(::draw2d::e_text_rendering_hint etextrenderinghint)
    {
 
       try
@@ -5756,7 +5756,7 @@ gdi_fallback:
             break;
          }
 
-         ::draw2d::graphics::set_text_rendering_hint_hint(etextrenderinghint);
+         ::draw2d::graphics::set_text_rendering_hint(etextrenderinghint);
 
          return true;
 
