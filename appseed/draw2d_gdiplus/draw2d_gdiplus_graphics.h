@@ -335,14 +335,10 @@ namespace draw2d_gdiplus
 
 
 
-      virtual bool draw_text(const char * lpszString,strsize nCount,const RECT & lpRect,UINT nFormat) override;
-      virtual bool draw_text(const string & str,const RECT & lpRect,UINT nFormat) override;
+      virtual bool _001DrawText(const string & str, rectd & rectParam,UINT nFormat, bool bMeasure = false) override;
 
       virtual bool draw_text_ex(const char * lpszString,strsize nCount,const RECT & lpRect,UINT nFormat,LPDRAWTEXTPARAMS lpDTParams) override;
       virtual bool draw_text_ex(const string & str,const RECT & lpRect,UINT nFormat,LPDRAWTEXTPARAMS lpDTParams) override;
-
-      virtual bool draw_text(const char * lpszString,strsize nCount,const RECTD & rect,UINT nFormat) override;
-      virtual bool draw_text(const string & str,const RECTD & rect,UINT nFormat) override;
 
       virtual bool draw_text_ex(const char * lpszString,strsize nCount,const RECTD & rect,UINT nFormat,LPDRAWTEXTPARAMS lpDTParams) override;
       virtual bool draw_text_ex(const string & str,const RECTD & rect,UINT nFormat,LPDRAWTEXTPARAMS lpDTParams) override;
