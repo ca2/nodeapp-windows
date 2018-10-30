@@ -1802,20 +1802,20 @@ gdi_fallback:
    }
 
 
-   bool graphics::StretchBlt(int32_t xDst, int32_t yDst, int32_t nDstWidth, int32_t nDstHeight, ::draw2d::graphics * pgraphicsSrc, int32_t xSrc, int32_t ySrc, int32_t nSrcWidth, int32_t nSrcHeight, uint32_t dwRop)
+   bool graphics::StretchBlt(double xDst, double yDst, double nDstWidth, double nDstHeight, ::draw2d::graphics * pgraphicsSrc, int32_t xSrc, int32_t ySrc, int32_t nSrcWidth, int32_t nSrcHeight, uint32_t dwRop)
    {
 
-      if (nDstWidth == nSrcWidth && nDstHeight == nSrcHeight)
-      {
+      //if (nDstWidth == nSrcWidth && nDstHeight == nSrcHeight)
+      //{
 
-         return BitBlt(xDst, yDst, nSrcWidth, nSrcHeight, pgraphicsSrc, xSrc, ySrc, dwRop);
+      //   return BitBlt(xDst, yDst, nSrcWidth, nSrcHeight, pgraphicsSrc, xSrc, ySrc, dwRop);
 
-      }
+      //}
 
       if(pgraphicsSrc == NULL)
          return FALSE;
 
-      Gdiplus::Rect dstRect( xDst,  yDst, nDstWidth, nDstHeight);
+      Gdiplus::RectF dstRect( xDst,  yDst, nDstWidth, nDstHeight);
 
 //      Gdiplus::Rect srcRect( xSrc, ySrc,  nSrcWidth, nSrcHeight);
 

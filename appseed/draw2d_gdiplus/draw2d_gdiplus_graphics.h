@@ -299,7 +299,7 @@ namespace draw2d_gdiplus
       bool PatBlt(i32 x, i32 y, i32 nWidth, i32 nHeight, uint32_t dwRop) override;
       bool BitBltRaw(i32 x, i32 y, i32 nWidth, i32 nHeight, ::draw2d::graphics * pgraphicsSrc,
                      i32 xSrc, i32 ySrc, uint32_t dwRop) override;
-      bool StretchBlt(i32 x, i32 y, i32 nWidth, i32 nHeight, ::draw2d::graphics * pgraphicsSrc,
+      bool StretchBlt(double x, double y, double nWidth, double nHeight, ::draw2d::graphics * pgraphicsSrc,
                       i32 xSrc, i32 ySrc, i32 nSrcWidth, i32 nSrcHeight, uint32_t dwRop) override;
       COLORREF GetPixel(i32 x, i32 y) override;
       COLORREF GetPixel(POINT point) override;
