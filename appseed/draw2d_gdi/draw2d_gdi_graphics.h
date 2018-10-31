@@ -193,7 +193,7 @@ namespace draw2d_gdi
       virtual size GetViewportExt() override;
       virtual size SetViewportExt(int cx, int cy) override;
       virtual size SetViewportExt(SIZE size) override;
-      virtual size ScaleViewportExt(int xNum, int xDenom, int yNum, int yDenom) override;
+      virtual size ScaleViewportExt(double xNum, double xDenom, double yNum, double yDenom) override;
 
       // Window Origin
       point GetWindowOrg() override;
@@ -322,7 +322,7 @@ namespace draw2d_gdi
       // Bitmap Functions
       bool PatBlt(int x, int y, int nWidth, int nHeight, uint32_t dwRop) override;
       bool draw(LPCRECT lpcrect, ::draw2d::graphics * pgraphicsSrc, LPCPOINT lppt, u32 dwRop) override;
-      bool StretchBlt(int x, int y, int nWidth, int nHeight, ::draw2d::graphics * pgraphicsSrc,
+      bool StretchBlt(double x, double y, double nWidth, double nHeight, ::draw2d::graphics * pgraphicsSrc,
                       int xSrc, int ySrc, int nSrcWidth, int nSrcHeight, uint32_t dwRop) override;
       COLORREF GetPixel(int x, int y) override;
       COLORREF GetPixel(POINT point) override;

@@ -1463,7 +1463,7 @@ namespace draw2d_gdi
 
 
 
-   bool graphics::StretchBlt(int x, int y, int nWidth, int nHeight, ::draw2d::graphics * pgraphicsSrc, int xSrc, int ySrc, int nSrcWidth, int nSrcHeight, uint32_t dwRop)
+   bool graphics::StretchBlt(double x, double y, double nWidth, double nHeight, ::draw2d::graphics * pgraphicsSrc, int xSrc, int ySrc, int nSrcWidth, int nSrcHeight, uint32_t dwRop)
    {
 
       synch_lock ml(m_pmutex);
@@ -4102,13 +4102,13 @@ namespace draw2d_gdi
       return size;
    }
 
-   size graphics::ScaleViewportExt(int xNum, int xDenom, int yNum, int yDenom)
+   size graphics::ScaleViewportExt(double xNum, double xDenom, double yNum, double yDenom)
    {
       size size(0, 0);
       if(get_handle1() != NULL && get_handle1() != get_handle2())
-         ::ScaleViewportExtEx(get_handle1(), xNum, xDenom, yNum, yDenom, &size);
+         ::ScaleViewportExtEx(get_handle1(), xNum * 10.0, xDenom * 10.0, yNum * 10.0, yDenom * 10.0, &size);
       if(get_handle2() != NULL)
-         ::ScaleViewportExtEx(get_handle2(), xNum, xDenom, yNum, yDenom, &size);
+         ::ScaleViewportExtEx(get_handle2(), xNum * 10.0, xDenom * 10.0, yNum * 10.0, yDenom * 10.0, &size);
       return size;
    }
 
