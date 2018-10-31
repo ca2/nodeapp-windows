@@ -38,11 +38,8 @@ namespace multimedia
          m_estate             = state_initial;
          m_pthreadCallback    = NULL;
          m_hwaveout           = NULL;
-         m_peffect            = NULL;
 
       }
-
-
 
 
       wave_out::~wave_out()
