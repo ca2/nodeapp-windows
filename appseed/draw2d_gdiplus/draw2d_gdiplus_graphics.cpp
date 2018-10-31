@@ -6006,8 +6006,33 @@ gdi_fallback:
    bool graphics::BitBltAlphaBlend(int32_t x, int32_t y, int32_t nWidth, int32_t nHeight, ::draw2d::graphics * pgraphicsSrc, int32_t xSrc, int32_t ySrc, uint32_t dwRop)
    {
 
+      //return ::draw2d::graphics::BitBltAlphaBlend(x, y, nWidth, nHeight, pgraphicsSrc, xSrc, ySrc, dwRop);
+
       if (m_pdibAlphaBlend != NULL)
       {
+
+         if (x < 0)
+         {
+
+            xSrc -= x;
+
+            nWidth += x;
+
+            x = 0;
+
+         }
+
+         if (y < 0)
+         {
+
+            ySrc -= y;
+
+            nHeight += y;
+
+            y = 0;
+
+         }
+
 
          rect rectIntersect(m_ptAlphaBlend, m_pdibAlphaBlend->size());
 
