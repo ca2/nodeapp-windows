@@ -21,7 +21,6 @@ namespace multimedia
          m_pthreadCallback    = NULL;
          m_pdirectsound       = NULL;
          m_psoundbuffer       = NULL;
-         m_peffect            = NULL;
 
       }
 
