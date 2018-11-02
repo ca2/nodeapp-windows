@@ -172,7 +172,7 @@ Opened:
 
             iBufferSampleCount = uiSamplesPerSec / 20;
 
-            iBufferCount = 16;
+            iBufferCount = 8;
 
          }
          else if(epurpose == ::multimedia::audio::purpose_playground)
