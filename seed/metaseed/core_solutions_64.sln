@@ -340,6 +340,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app_veriwell_asciimedia", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app_veriwell_waven", "..\..\..\app-veriwell\appseed\waven\waven.vcxproj", "{5262FA60-FE91-4A5E-AC0D-89479B8A7670}"
 	ProjectSection(ProjectDependencies) = postProject
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C} = {19CC0015-A667-40EF-A04C-D02D15FDD64C}
 		{19841115-1984-0411-1977-021977151984} = {19841115-1984-0411-1977-021977151984}
 		{54850FD8-653A-43B6-AA90-E59AC030559C} = {54850FD8-653A-43B6-AA90-E59AC030559C}
 	EndProjectSection
@@ -360,10 +361,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rdpsnd-client-audio_decode"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_desk_tb", "..\..\..\app-core\appseed\desk_tb\desk_tb.vcxproj", "{19518477-1511-2204-0204-5872E30F2300}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "audio_decode_youtube_player_api_for_iframe", "..\..\..\app-core\appseed\audio_decode_youtube_player_api_for_iframe\audio_decode_youtube_player_api_for_iframe.vcxproj", "{19CC0015-A667-40EF-A04C-D02D15FDD64C}"
+EndProject
 Global
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		basis|Win32 = basis|Win32
 		basis|x64 = basis|x64
@@ -1337,12 +1337,27 @@ Global
 		{19518477-1511-2204-0204-5872E30F2300}.stage|Win32.Build.0 = stage|Win32
 		{19518477-1511-2204-0204-5872E30F2300}.stage|x64.ActiveCfg = stage|x64
 		{19518477-1511-2204-0204-5872E30F2300}.stage|x64.Build.0 = stage|x64
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.basis|Win32.ActiveCfg = basis|Win32
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.basis|Win32.Build.0 = basis|Win32
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.basis|x64.ActiveCfg = basis|x64
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.basis|x64.Build.0 = basis|x64
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.cover|Win32.ActiveCfg = cover|Win32
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.cover|Win32.Build.0 = cover|Win32
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.cover|x64.ActiveCfg = cover|x64
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.cover|x64.Build.0 = cover|x64
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.stage|Win32.ActiveCfg = stage|Win32
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.stage|Win32.Build.0 = stage|Win32
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.stage|x64.ActiveCfg = stage|x64
+		{19CC0015-A667-40EF-A04C-D02D15FDD64C}.stage|x64.Build.0 = stage|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68D0CE57-7B21-4289-B0DC-382B607631F2}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
