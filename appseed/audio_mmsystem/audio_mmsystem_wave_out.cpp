@@ -656,16 +656,7 @@ Opened:
 
          wave_out_stop();
 
-         if(m_pprebuffer->m_pstreameffectOut != NULL)
-         {
-
-            ::multimedia::iaudio::wave_stream_effect * peffect = m_pprebuffer->m_pstreameffectOut;
-
-            m_pprebuffer->m_pstreameffectOut = NULL;
-
-            delete peffect;
-
-         }
+         m_pprebuffer->m_pstreameffectOut.release();
 
          m_pplayer->post_event(::multimedia::audio::wave_player::EventPlaybackEnd);
 
